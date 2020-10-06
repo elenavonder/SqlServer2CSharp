@@ -13,7 +13,7 @@ namespace SQLLibrary
         {
             var cmd = new SqlCommand(sql, connection);//allows you to do sql statement
             var students = new List<Student>();
-            var reader = cmd.ExecuteReader();//
+            var reader = cmd.ExecuteReader();//going through each row
             while (reader.Read())//starts by pointing before any row and ends past last row
             {
                 var stud = new Student();
