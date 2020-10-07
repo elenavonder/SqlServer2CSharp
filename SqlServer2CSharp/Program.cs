@@ -11,8 +11,12 @@ namespace SqlServer2CSharp
             var ss = new SqlServer();
             var ok = ss.Connect("localhost", "sqlexpress", "EdDb");
 
-            var students = ss.ExecuteQuery("SELECT * From Student;");
+            var students = ss.SelectAllStudents("SELECT * From Student;");
+            foreach(var stud in students)
+            {
 
+                Console.WriteLine(stud);
+            }
             ss.Disconnect();
         }
     }
